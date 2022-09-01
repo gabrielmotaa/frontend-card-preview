@@ -1,0 +1,144 @@
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%); 
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-greysh-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    background-color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--white);
+    border-radius: 8px;
+    color: var(--dark-greysh-blue);
+    overflow: hidden;
+}
+
+picture {
+    padding: 0;
+    margin: 0;
+}
+
+.card-img {
+    min-height: 100%;
+    flex: 1;
+    margin: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    min-height: 100%;
+    flex: 1;
+}
+
+.card-content > *:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+
+    color: var(--very-dark-blue);
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    height: 100%;
+
+}
+
+.category {
+    text-transform: uppercase;
+    letter-spacing: 1ch;
+    font-size: 12px;
+}
+
+
+.prices {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.actual-price {
+    font-family: 'Fraunces', serif;
+    color: var(--dark-cyan);
+    font-size: 30px;
+}
+
+.original-price {
+    font-family: 'Fraunces', serif;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+button {
+    background-color: var(--dark-cyan);
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    border: none;
+    color: var(--white);
+    font-family: inherit;
+    font-weight: 700;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+button:hover {
+    background-color: var(--very-dark-blue);
+}
+
+.attribution {
+    color: var(--very-dark-blue);
+    font-family: sans-serif;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.attribution a {
+    text-decoration: none;
+}
+
+.attribution a:link {
+    color: var(--dark-cyan);    
+}
+
+@media screen and (min-width: 376px) {
+    .card {
+        max-width: 600px;
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card h2 {
+        max-width: 10ch;
+    }
+}
